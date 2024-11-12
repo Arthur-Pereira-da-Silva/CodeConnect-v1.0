@@ -1,0 +1,41 @@
+<div id="profile-form-container" class="container">
+    <div class="row">
+        <a class="back-link main-color" href="{{#if (eq userRole 'recruiter')}}/home_recruiter{{else}}/home_user{{/if}}">Voltar</a>
+        <div class="col-md-12">
+            <h1 class="text-center">Seu Perfil</h1>
+        </div>
+        <div id="form-box" class="col-md-12">
+            <h2>Atualize suas informações para manter seu perfil em dia!</h2>
+            <form action="/profile/user/edit" method="POST">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{user.name}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{user.email}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" value="{{user.cpf}}" required>
+                </div>
+
+                {{#if (eq userRole 'recruiter')}}
+                <div class="form-group">
+                    <label for="company">Empresa:</label>
+                    <input type="text" class="form-control" id="company" name="company" value="{{user.company}}" required>
+                </div>
+                {{/if}}
+
+                <div class="form-group">
+                    <label for="password">Nova Senha:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Digite uma nova senha (opcional)">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div id="edit-form-container" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <a class="back-link main-color" href="/home_recruiter">Voltar</a>
+            <h1 class="text-center">Edite a vaga preenchendo o formulário</h1>
+        </div>
+        <div id="form-box" class="col-md-12">
+            <h2>Atualize os dados da vaga para manter suas informações precisas!</h2>
+            <form action="/jobs/edit/{{job.dataValues.id}}" method="POST">
+                <div class="form-group">
+                    <label for="title">Título da vaga:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{job.dataValues.title}}" required>
+                    <small id="titleHelp" class="form-text text-muted">O título é muito importante, seja claro e objetivo.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descrição da vaga:</label>
+                    <textarea type="text" class="form-control" id="description" name="description" required>{{job.dataValues.description}}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Empresa contratante:</label>
+                    <input type="text" class="form-control" id="company" name="company" value="{{job.dataValues.company}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail para contato:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{job.dataValues.email}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="salary">Salário oferecido:</label>
+                    <input type="text" class="form-control" id="salary" name="salary" value="{{job.dataValues.salary}}" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+</div>

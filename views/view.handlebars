@@ -1,0 +1,32 @@
+<div id="job-view-container" class="container">
+  <div class="row text-center">
+    <a class="back-link main-color" href="{{#if (eq userRole 'recruiter')}}/home_recruiter{{else}}/home_user{{/if}}">Voltar</a>
+    
+    <div id="img-container" class="col-md-12">
+      <img src="/img/icon2.png" alt="Company">
+    </div>
+
+    <div class="col-md-12">
+      <h1 class="main-color">{{job.dataValues.title}}</h1>
+      <p class="bold">Quem eles estão buscando:</p>
+      <p class="job-desc">{{job.dataValues.description}}</p>
+      <p><span class="bold">O salário informado é de:</span> R${{job.dataValues.salary}}</p>
+      <p>Para trabalhar na <span class="bold main-color">{{job.dataValues.company}}</span>, clique neste link:
+        <a class="main-color" 
+          href="https://mail.google.com/mail/?view=cm&fs=1&to={{job.dataValues.email}}&su=Candidatura%20para%20vaga%20de%20{{job.dataValues.title}}&body=Prezado%20recrutador,%0A%0AGostaria%20de%20me%20candidatar%20à%20vaga%20de%20{{job.dataValues.title}}%20na%20{{job.dataValues.company}}.%20Segue%20em%20anexo%20meu%20currículo.%0A%0AAtenciosamente,%0A[Seu%20Nome]"
+          target="_blank">
+          {{job.dataValues.email}}
+        </a>
+      </p>
+
+
+
+      {{#if (eq userRole 'recruiter')}}
+        <a href="/jobs/edit/{{job.dataValues.id}}" class="btn btn-danger">Editar Vaga</a>
+        <form action="/jobs/delete/{{job.dataValues.id}}" method="POST" style="display:inline;">
+          <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir esta vaga?');">Excluir Vaga</button>
+        </form>
+      {{/if}}
+    </div>
+  </div>
+</div>

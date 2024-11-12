@@ -1,0 +1,37 @@
+<div id="login-form-container" class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div id="welcome-message" class="text-center welcome-message">
+                <h2>Bem-vindo ao CodeConnect!</h2>
+                <p>Por favor, faça login na sua conta.</p>
+            </div>
+            <div id="form-box" class="mt-4">
+                <h2>Entre na sua conta</h2>
+                <form action="/auth/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Tipo de Usuário:</label>
+                        <select class="form-control" id="role" name="role" required>
+                            <option value="user">Candidato</option>
+                            <option value="recruiter">Recrutador</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+            <div class="text-center mt-3">
+                <p>Ainda não tem uma conta? <a href="/auth/register/user">Cadastre-se como Candidato</a> | <a href="/auth/register/recruiter">Cadastre-se como Recrutador</a></p>
+            </div>
+        </div>
+    </div>
+</div>

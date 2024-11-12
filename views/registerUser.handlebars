@@ -1,0 +1,35 @@
+<div id="add-form-container" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Cadastre-se como Candidato</h1>
+        </div>
+        <div id="form-box" class="col-md-12">
+            <h2>Preencha os dados abaixo para criar seu perfil</h2>
+            <form action="/auth/register/user" method="POST">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    <small id="emailHelp" class="form-text text-muted">Seu e-mail será usado para login.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required>
+                    <small id="passwordHelp" class="form-text text-muted">Escolha uma senha segura.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
